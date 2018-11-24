@@ -7,17 +7,32 @@ constructor(props){
   super(props);
     this.state={
      item:"OFF",
+     inputText:"",
     }
-    this.checking = this.checking.bind(this);
   }
   checking=()=>{
-    this.state.item=="OFF"? this.setState({item:"ON"}) :console.log("OFF hi hay!")
-    this.state.item=="ON"? this.setState({item:"OFF"}) :console.log("ON hi hay!")
-
+    this.state.item=="OFF"? this.setState({item:"ON"}) :""
+    this.state.item=="ON"? this.setState({item:"OFF"}) :""
+    this.props.Child(this.state.inputText)
+    this.setState(
+      {
+        inputText:""
+      }
+    )
   }
-  render() {
+  onChange=(event)=>{
+    this.setState(
+        {
+            inputText:event.target.value
+        }
+    )
+}
+render() {
     return (
       <div className="App">
+      <h1>Child Component</h1>
+      <input type="text" value={this.state.inputText} onChange={this.onChange}/>
+
           <input type="submit" value={this.state.item} onClick={this.checking}/>
       </div>
     );
