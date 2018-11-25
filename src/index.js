@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Form from './Form'
+import Input from './Todo-App/Inputs'
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<Form />, document.getElementById('root'));
+ReactDOM.render(<Input />, document.getElementById('root'));
 registerServiceWorker();
