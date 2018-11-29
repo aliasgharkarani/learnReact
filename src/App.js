@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Map from "./Map"
 
@@ -13,8 +12,8 @@ class App extends Component {
     }
   }
   checking = () => {
-    this.state.item == "OFF" ? this.setState({ item: "ON" }) : ""
-    this.state.item == "ON" ? this.setState({ item: "OFF" }) : ""
+    this.state.item === "OFF" ? this.setState({ item: "ON" }) : ""
+    this.state.item === "ON" ? this.setState({ item: "OFF" }) : ""
     this.props.Child(this.state.inputText)
     this.setState(
       {
